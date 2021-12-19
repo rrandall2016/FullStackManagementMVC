@@ -1,0 +1,67 @@
+﻿@model IEnumerable<FullStackManagementMVC.Models.Exercises>
+<div style="padding: 50px">
+
+    <!-- End of Topbar -->
+    <h1>Exercise Log</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MuscleGroup)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Reps)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sets)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Weight)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MuscleGroup)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Reps)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+            
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+

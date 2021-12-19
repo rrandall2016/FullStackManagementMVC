@@ -1,0 +1,22 @@
+﻿@model Stocks
+<!-- End of Topbar -->
+
+
+<div class="text-center">
+
+    <h1 class="display-3">Stock News</h1>
+    <div class="container-fluid">
+        <div class="row">
+            @for (int i = 0; i < 10; i++)
+            {
+                <div class="card box-shadow col-lg-4">
+                    <h4>@Model.results[i].description</h4>
+                    <img src="@Model.results[i].image_url" class="img-fluid" />
+
+                </div>
+            }
+        </div>
+
+    </div>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

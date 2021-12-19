@@ -1,0 +1,49 @@
+﻿@model FullStackManagementMVC.Models.Calories
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div style="padding: 50px">
+    <h1>Details</h1>
+
+    <div>
+        <h4>Calories</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BurnTarget)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BurnTarget)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IntakeTarget)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IntakeTarget)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Protein)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Protein)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Fat)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Fat)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Carbs)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Carbs)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

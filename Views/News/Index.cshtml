@@ -1,0 +1,27 @@
+﻿@model News
+<!-- End of Topbar -->
+
+
+<div class="text-center">
+    <h1 class="display-4">Breaking News</h1>
+    <div class="container-fluid">
+        <div class="row">
+            @for (int i = 0; i < 15; i++)
+            {
+
+                <div class="card box-shadow col-lg-4">
+
+                    <h4>@Model.articles[i].source.name</h4>
+                    <h5>@Model.articles[i].description</h5>
+                    <a href="@Model.articles[i].url"><img src="@Model.articles[i].urlToImage" class="img-fluid"></a>
+                </div>
+
+
+
+            }
+        </div>
+    </div>
+
+</div>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

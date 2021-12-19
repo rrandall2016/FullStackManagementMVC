@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FullStackManagementMVC.Models.Goals>
+
+<div style="padding: 30px">
+    <h1>Major Goals - Please Edit 5 Goals</h1>
+
+    @*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Goal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Percentage)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Goal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Percentage)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                        @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

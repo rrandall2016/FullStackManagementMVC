@@ -1,0 +1,32 @@
+﻿@model Yelp
+<!-- End of Topbar -->
+
+
+<div class="text-center">
+    <h1 class="display-4">Restaurants Near You</h1>
+    <h2>Enter Your City-State. Example: Dallas-Texas</h2>
+    <div style="padding: 10px">
+        <form action="@Url.Action("Index","Yelp")">
+            <input type="text" id="fname" name="location"><br><br />
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+
+            @for (int i = 0; i < 12; i++)
+            {
+                <div class="card box-shadow col-lg-4">
+                    <h3 style="padding: 15px">@Model.businesses[i].name</h3>
+                    <h5>Star Rating: @Model.businesses[i].rating</h5>
+                    <h5>@Model.businesses[i].phone</h5>
+
+                    <img src="@Model.businesses[i].image_url" class="img-fluid">
+                </div>
+
+            }
+        </div>
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

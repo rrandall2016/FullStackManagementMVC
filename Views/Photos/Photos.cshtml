@@ -1,0 +1,17 @@
+﻿@model List<Photos.Class1>
+<!-- End of Topbar -->
+
+
+<div class="text-center">
+    <h1 class="display-4">Photos of the day</h1>
+    <div class="container-fluid">
+        <div class="row">
+            @for (int i = 0; i < 10; i++)
+            {
+                <div class="card box-shadow col-lg-4">
+                    <img src="@Model[i].urls.small" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
