@@ -21,7 +21,7 @@ namespace FullStackManagementMVC.Controllers
         public async Task<IActionResult> Index()
         {
             //await webservice
-            var asyncResult = await webServices.GetData4("https://newsapi.org/v2/top-headlines?country=us&apiKey=9b2d34c4a37545e0af58651e49c5a7f9");
+            var asyncResult = await webServices.GetData4("https://newsapi.org/v2/top-headlines?country=us&apiKey=");
 
             return View(asyncResult);
         }
